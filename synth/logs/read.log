@@ -1,0 +1,252 @@
+#------------------------------------------------------------
+#
+# Basic Synthesis Script (TCL format)
+#                                  
+# Revision History                
+#   1/15/03  : Author Shane T. Gehring - from class example
+#   2/09/07  : Author Zhengtao Yu      - from class example
+#   12/14/07 : Author Ravi Jenkal      - updated to 180 nm & tcl
+#
+#------------------------------------------------------------
+#---------------------------------------------------------
+# Read in Verilog file and map (synthesize) onto a generic
+# library.
+# MAKE SURE THAT YOU CORRECT ALL WARNINGS THAT APPEAR
+# during the execution of the read command are fixed 
+# or understood to have no impact.
+# ALSO CHECK your latch/flip-flop list for unintended 
+# latches                                            
+#---------------------------------------------------------
+read_verilog -rtl $::env(RTL_FILES)
+Loading db file '/mnt/coe/workspace/ece/ece720-common/tech/nangate/NangateOpenCellLibrary_PDKv1_2_v2008_10/liberty/520/NangateOpenCellLibrary_PDKv1_2_v2008_10_slow_nldm.db'
+Loading db file '/mnt/apps/public/COE/synopsys_apps/syn/T-2022.03-SP4/libraries/syn/dw_foundation.sldb'
+Loading db file '/mnt/apps/public/COE/synopsys_apps/syn/T-2022.03-SP4/libraries/syn/gtech.db'
+Loading db file '/mnt/apps/public/COE/synopsys_apps/syn/T-2022.03-SP4/libraries/syn/standard.sldb'
+  Loading link library 'NangateOpenCellLibrary_PDKv1_2_v2008_10_slow_nldm'
+  Loading link library 'gtech'
+Loading verilog file '/mnt/ncsudrive/a/asarath/projectFall2023/rtl/dut.v'
+Running PRESTO HDLC
+Compiling source file /mnt/ncsudrive/a/asarath/projectFall2023/rtl/dut.v
+Opening include file ../testbench//defines.vh
+Warning:  /mnt/ncsudrive/a/asarath/projectFall2023/rtl/dut.v:470: signed to unsigned conversion occurs. (VER-318)
+Warning:  /mnt/ncsudrive/a/asarath/projectFall2023/rtl/dut.v:471: signed to unsigned conversion occurs. (VER-318)
+
+Statistics for case statements in always block at line 193 in file
+	'/mnt/ncsudrive/a/asarath/projectFall2023/rtl/dut.v'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|           194            |    auto/auto     |
+===============================================
+Warning: Could not open default SVF file /mnt/ncsudrive/a/asarath/projectFall2023/synthesis/svf/default.svf for writing.
+
+Inferred memory devices in process
+	in routine MyDesign line 184 in file
+		'/mnt/ncsudrive/a/asarath/projectFall2023/rtl/dut.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|  current_state_reg  | Flip-flop |   4   |  Y  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine MyDesign line 452 in file
+		'/mnt/ncsudrive/a/asarath/projectFall2023/rtl/dut.v'.
+================================================================================
+|    Register Name     |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+================================================================================
+| compute_complete_reg | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+================================================================================
+
+Inferred memory devices in process
+	in routine MyDesign line 463 in file
+		'/mnt/ncsudrive/a/asarath/projectFall2023/rtl/dut.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+| total_matrices_reg  | Flip-flop |  64   |  Y  | N  | N  | N  | N  | N  | N  |
+| q_states_count_reg  | Flip-flop |  64   |  Y  | N  | N  | N  | N  | N  | N  |
+|   gates_count_reg   | Flip-flop |  64   |  Y  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine MyDesign line 477 in file
+		'/mnt/ncsudrive/a/asarath/projectFall2023/rtl/dut.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|  matrix_count_reg   | Flip-flop |  64   |  Y  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine MyDesign line 491 in file
+		'/mnt/ncsudrive/a/asarath/projectFall2023/rtl/dut.v'.
+=================================================================================
+|     Register Name     |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+=================================================================================
+| row_read_complete_reg | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+=================================================================================
+
+Inferred memory devices in process
+	in routine MyDesign line 500 in file
+		'/mnt/ncsudrive/a/asarath/projectFall2023/rtl/dut.v'.
+==================================================================================
+|     Register Name      |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+==================================================================================
+| gate_read_complete_reg | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+==================================================================================
+
+Inferred memory devices in process
+	in routine MyDesign line 509 in file
+		'/mnt/ncsudrive/a/asarath/projectFall2023/rtl/dut.v'.
+====================================================================================
+|      Register Name       |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+====================================================================================
+| matrix_read_complete_reg | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+====================================================================================
+
+Inferred memory devices in process
+	in routine MyDesign line 518 in file
+		'/mnt/ncsudrive/a/asarath/projectFall2023/rtl/dut.v'.
+==================================================================================
+|     Register Name      |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+==================================================================================
+| final_matrix_check_reg | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+==================================================================================
+
+Inferred memory devices in process
+	in routine MyDesign line 527 in file
+		'/mnt/ncsudrive/a/asarath/projectFall2023/rtl/dut.v'.
+=================================================================================================
+|             Register Name             |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+=================================================================================================
+| q_state_input_sram_read_address_r_reg | Flip-flop |  32   |  Y  | N  | N  | N  | N  | N  | N  |
+=================================================================================================
+
+Inferred memory devices in process
+	in routine MyDesign line 546 in file
+		'/mnt/ncsudrive/a/asarath/projectFall2023/rtl/dut.v'.
+===========================================================================================
+|          Register Name          |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===========================================================================================
+| q_gates_sram_read_address_r_reg | Flip-flop |  32   |  Y  | N  | N  | N  | N  | N  | N  |
+===========================================================================================
+
+Inferred memory devices in process
+	in routine MyDesign line 565 in file
+		'/mnt/ncsudrive/a/asarath/projectFall2023/rtl/dut.v'.
+==============================================================================================
+|           Register Name            |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+==============================================================================================
+| scratchpad_sram_read_address_r_reg | Flip-flop |  32   |  Y  | N  | N  | N  | N  | N  | N  |
+==============================================================================================
+
+Inferred memory devices in process
+	in routine MyDesign line 584 in file
+		'/mnt/ncsudrive/a/asarath/projectFall2023/rtl/dut.v'.
+==================================================================================================
+|             Register Name              |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+==================================================================================================
+| q_state_input_sram_write_enable_r_reg  | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+| q_state_output_sram_write_enable_r_reg | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|    q_gates_sram_write_enable_r_reg     | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|   scratchpad_sram_write_enable_r_reg   | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+==================================================================================================
+
+Inferred memory devices in process
+	in routine MyDesign line 618 in file
+		'/mnt/ncsudrive/a/asarath/projectFall2023/rtl/dut.v'.
+==========================================================================================
+|         Register Name          |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+==========================================================================================
+| scratchpad_address_counter_reg | Flip-flop |  64   |  Y  | N  | N  | N  | N  | N  | N  |
+==========================================================================================
+
+Inferred memory devices in process
+	in routine MyDesign line 632 in file
+		'/mnt/ncsudrive/a/asarath/projectFall2023/rtl/dut.v'.
+===============================================================================================
+|            Register Name            |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================================
+| scratchpad_sram_write_address_r_reg | Flip-flop |  32   |  Y  | N  | N  | N  | N  | N  | N  |
+===============================================================================================
+
+Inferred memory devices in process
+	in routine MyDesign line 643 in file
+		'/mnt/ncsudrive/a/asarath/projectFall2023/rtl/dut.v'.
+============================================================================================
+|          Register Name           |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+============================================================================================
+| scratchpad_sram_write_data_r_reg | Flip-flop |  128  |  Y  | N  | N  | N  | N  | N  | N  |
+============================================================================================
+
+Inferred memory devices in process
+	in routine MyDesign line 654 in file
+		'/mnt/ncsudrive/a/asarath/projectFall2023/rtl/dut.v'.
+===================================================================================================
+|              Register Name              |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===================================================================================================
+| q_state_output_sram_write_address_r_reg | Flip-flop |  32   |  Y  | N  | N  | N  | N  | N  | N  |
+===================================================================================================
+
+Inferred memory devices in process
+	in routine MyDesign line 670 in file
+		'/mnt/ncsudrive/a/asarath/projectFall2023/rtl/dut.v'.
+================================================================================================
+|            Register Name             |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+================================================================================================
+| q_state_output_sram_write_data_r_reg | Flip-flop |  128  |  Y  | N  | N  | N  | N  | N  | N  |
+================================================================================================
+
+Inferred memory devices in process
+	in routine MyDesign line 681 in file
+		'/mnt/ncsudrive/a/asarath/projectFall2023/rtl/dut.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|  inst_rnd_mac_reg   | Flip-flop |   3   |  Y  | N  | N  | N  | N  | N  | N  |
+|     inst_a1_reg     | Flip-flop |  64   |  Y  | N  | N  | N  | N  | N  | N  |
+|     inst_a2_reg     | Flip-flop |  64   |  Y  | N  | N  | N  | N  | N  | N  |
+|     inst_c2_reg     | Flip-flop |  64   |  Y  | N  | N  | N  | N  | N  | N  |
+|     inst_b1_reg     | Flip-flop |  64   |  Y  | N  | N  | N  | N  | N  | N  |
+|     inst_c1_reg     | Flip-flop |  64   |  Y  | N  | N  | N  | N  | N  | N  |
+|     inst_b2_reg     | Flip-flop |  64   |  Y  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine MyDesign line 753 in file
+		'/mnt/ncsudrive/a/asarath/projectFall2023/rtl/dut.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|    temp_mac1_reg    | Flip-flop |  64   |  Y  | N  | N  | N  | N  | N  | N  |
+|    temp_mac2_reg    | Flip-flop |  64   |  Y  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine MyDesign line 775 in file
+		'/mnt/ncsudrive/a/asarath/projectFall2023/rtl/dut.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+| inst_rnd_adder_reg  | Flip-flop |   3   |  Y  | N  | N  | N  | N  | N  | N  |
+|     inst_a3_reg     | Flip-flop |  64   |  Y  | N  | N  | N  | N  | N  | N  |
+|     inst_b3_reg     | Flip-flop |  64   |  Y  | N  | N  | N  | N  | N  | N  |
+|     inst_a4_reg     | Flip-flop |  64   |  Y  | N  | N  | N  | N  | N  | N  |
+|     inst_b4_reg     | Flip-flop |  64   |  Y  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine MyDesign line 801 in file
+		'/mnt/ncsudrive/a/asarath/projectFall2023/rtl/dut.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|   temp_adder1_reg   | Flip-flop |  64   |  Y  | N  | N  | N  | N  | N  | N  |
+|   temp_adder2_reg   | Flip-flop |  64   |  Y  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+Presto compilation completed successfully.
+Current design is now '/mnt/ncsudrive/a/asarath/projectFall2023/rtl/MyDesign.db:MyDesign'
+Loaded 1 design.
+Current design is 'MyDesign'.
+MyDesign
